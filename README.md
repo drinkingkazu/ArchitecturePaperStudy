@@ -6,3 +6,4 @@ To use EpochAnalysis.ipynb, you need to rsync data from wu.
 Try this:
 
 > rsync -L -v -r YOUR_USER_NAME@WU_DOMAIN:/data/shared/plotter_data ./
+> rsync -L -v -r YOUR_USER_NAME@WU_DOMAIN:/data/shared/ArchitectureStudyInference/testA ./
