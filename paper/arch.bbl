@@ -1,0 +1,498 @@
+
+% NEUTRINO 2016 Conference
+@online{NEUTRINO2016,
+  author = {{IOP} {I}nstitue of {P}hysics},
+  title = {{NEUTRINO} 2016},
+  year = 2016,
+  url = {http://neutrino2016.iopconfs.org/home},
+  urldate = {2017-02-13}
+}
+
+
+% DUNE CDR volume 2
+@article{Acciarri:2015uup,
+      author         = "Acciarri, R. and others",
+      title          = "{Long-Baseline Neutrino Facility (LBNF) and Deep
+                        Underground Neutrino Experiment (DUNE)}",
+      collaboration  = "DUNE",
+      year           = "2015",
+      eprint         = "1512.06148",
+      archivePrefix  = "arXiv",
+      primaryClass   = "physics.ins-det",
+      reportNumber   = "FERMILAB-DESIGN-2016-02",
+      SLACcitation   = "%%CITATION = ARXIV:1512.06148;%%"
+}
+
+
+% LArSoft \cite{Church:2013hea}
+@article{Church:2013hea,
+      author         = "Church, Eric D.",
+      title          = "{LArSoft: A Software Package for Liquid Argon Time
+                        Projection Drift Chambers}",
+      year           = "2013",
+      eprint         = "1311.6774",
+      archivePrefix  = "arXiv",
+      primaryClass   = "physics.ins-det",
+      SLACcitation   = "%%CITATION = ARXIV:1311.6774;%%"
+}
+
+%MicroBooNE CNN JINST article \cite{ubooneCNN}
+@article{uB-JINST,
+	author	= "MicroBooNE collaboration",
+	title		= "{Convolutional Neural Networks Applied to Neutrino Events in a Liquid Argon Time Projection Chamber}",
+	year		= "2016",
+	eprint	="1611.05531",
+	archivePrefix	= "arXiv",
+	primaryClass	= "physics.ins-det",
+	journal		= "submitted to JINST"
+	}
+
+% NuMI refernce \cite{Adamson:2015dkw}
+@article{Adamson:2015dkw,
+      author         = "Adamson, P. and others",
+      title          = "{The NuMI Neutrino Beam}",
+      journal        = "Nucl. Instrum. Meth.",
+      volume         = "A806",
+      year           = "2016",
+      pages          = "279-306",
+      doi            = "10.1016/j.nima.2015.08.063",
+      eprint         = "1507.06690",
+      archivePrefix  = "arXiv",
+      primaryClass   = "physics.acc-ph",
+      reportNumber   = "FERMILAB-PUB-15-253-AD-FESS-ND",
+      SLACcitation   = "%%CITATION = ARXIV:1507.06690;%%"
+}
+
+% Cite GENIE \cite{Andreopoulos:2009rq}
+@article{Andreopoulos:2009rq,
+      author         = "Andreopoulos, C. and Bell, A. and Bhattacharya, D. and
+                        Cavanna, F. and Dobson, J. and others",
+      title          = "{The GENIE Neutrino Monte Carlo Generator}",
+      journal        = "Nucl.Instrum.Meth.",
+      volume         = "A614",
+      pages          = "87-104",
+      doi            = "10.1016/j.nima.2009.12.009",
+      year           = "2010",
+      eprint         = "0905.2517",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ph",
+      reportNumber   = "FERMILAB-PUB-09-418-CD",
+      SLACcitation   = "\%\%CITATION = ARXIV:0905.2517;\%\%"
+}
+
+% Cite NEUT \cite{Hayato:2002sd}
+@article{Hayato:2002sd,
+      author         = "Hayato, Y.",
+      title          = "{NEUT}",
+      journal        = "Nucl.Phys.Proc.Suppl.",
+      volume         = "112",
+      pages          = "171-176",
+      doi            = "10.1016/S0920-5632(02)01759-0",
+      year           = "2002",
+      SLACcitation   = "%%CITATION = NUPHZ,112,171;%%"
+}
+
+% Cite GiBUU \cite{Buss:2011mx}
+@article{Buss:2011mx,
+      author         = "Buss, O. and Gaitanos, T. and Gallmeister, K. and van
+                        Hees, H. and Kaskulov, M. and others",
+      title          = "{Transport-theoretical Description of Nuclear Reactions}",
+      journal        = "Phys.Rept.",
+      volume         = "512",
+      pages          = "1-124",
+      doi            = "10.1016/j.physrep.2011.12.001",
+      year           = "2012",
+      eprint         = "1106.1344",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ph",
+      SLACcitation   = "%%CITATION = ARXIV:1106.1344;%%",
+}
+
+% Cite Nuance \cite{Casper:2002sd}
+@article{Casper:2002sd,
+      author         = "Casper, D.",
+      title          = "{The Nuance neutrino physics simulation, and the future}",
+      journal        = "Nucl.Phys.Proc.Suppl.",
+      volume         = "112",
+      pages          = "161-170",
+      doi            = "10.1016/S0920-5632(02)01756-5",
+      year           = "2002",
+      eprint         = "hep-ph/0208030",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ph",
+      SLACcitation   = "%%CITATION = HEP-PH/0208030;%%"
+}
+
+% Cite NuWro \cite{Juszczak:2005zs,Golan:2012rfa}
+@article{Juszczak:2005zs,
+      author         = "Juszczak, Cezary and Nowak, Jaroslaw A. and Sobczyk, Jan
+                        T.",
+      title          = "{Simulations from a new neutrino event generator}",
+      journal        = "Nucl.Phys.Proc.Suppl.",
+      volume         = "159",
+      pages          = "211-216",
+      doi            = "10.1016/j.nuclphysbps.2006.08.069",
+      year           = "2006",
+      eprint         = "hep-ph/0512365",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ph",
+      SLACcitation   = "%%CITATION = HEP-PH/0512365;%%",
+      note = "\url{http://borg.ift.uni.wroc.pl/nuwro/}"
+}
+@article{Golan:2012rfa,
+      author         = "Golan, T. and Sobczyk, J.T. and Zmuda, J.",
+      title          = "{NuWro: the Wroclaw Monte Carlo Generator of Neutrino
+                        Interactions}",
+      journal        = "Nucl.Phys.Proc.Suppl.",
+      volume         = "229-232",
+      pages          = "499",
+      doi            = "10.1016/j.nuclphysbps.2012.09.136",
+      year           = "2012",
+      SLACcitation   = "%%CITATION = NUPHZ,229-232,499;%%"
+}
+
+% Cite the art framework
+@article{Green:2012gv,
+      author         = "Green, C. and Kowalkowski, J. and Paterno, M. and
+                        Fischler, M. and Garren, L. and others",
+      title          = "{The art framework}",
+      journal        = "J.Phys.Conf.Ser.",
+      volume         = "396",
+      pages          = "022020",
+      doi            = "10.1088/1742-6596/396/2/022020",
+      year           = "2012",
+      reportNumber   = "FERMILAB-PUB-12-301-CD",
+      SLACcitation   = "%%CITATION = 00462,396,022020;%%"
+}
+
+% Cite the Gaudi framework
+@article{Clemencic:2010zz,
+      author         = "Clemencic, Marco and Degaudenzi, Hubert and Mato, Pere
+                        and Binet, Sebastian and Lavrijsen, Wim and others",
+      title          = "{Recent developments in the LHCb software framework
+                        Gaudi}",
+      journal        = "J.Phys.Conf.Ser.",
+      volume         = "219",
+      pages          = "042006",
+      doi            = "10.1088/1742-6596/219/4/042006",
+      year           = "2010",
+      SLACcitation   = "%%CITATION = 00462,219,042006;%%"
+}
+
+% Cite ROOT \cite{Brun:1997pa}
+@article{Brun:1997pa,
+      author         = "Brun, R. and Rademakers, F.",
+      title          = "{ROOT: An object oriented data analysis framework}",
+      journal        = "Nucl.Instrum.Meth.",
+      volume         = "A389",
+      pages          = "81-86",
+      doi            = "10.1016/S0168-9002(97)00048-X",
+      year           = "1997",
+      SLACcitation   = "%%CITATION = NUIMA,A389,81;%%"
+}
+
+% Cite FLUKA \cite{Ferrari:2005fm, Battistoni:2007fm}
+% http://www.fluka.org/fluka.php?id=faq&sub=13
+%"The FLUKA code: Description and benchmarking"
+%G. Battistoni, S. Muraro, P.R. Sala, F. Cerutti, A. Ferrari,
+%S. Roesler, A. Fasso`, J. Ranft,
+%Proceedings of the Hadronic Shower Simulation Workshop 2006,
+%Fermilab 6--8 September 2006, M. Albrow, R. Raja eds.,
+%AIP Conference Proceeding 896, 31-49, (2007) 
+@article{Battistoni:2007fm,
+	author = "Battistoni, G. and others",
+	title = "The FLUKA code: Description and benchmarking",
+	collaboration = "FLUKA",
+	journal = "AIP Conference Proceeding",
+	volume = "986",
+	pages = "31-49",
+	year = "2007"
+}
+
+
+% Cite Geant4 \cite{Agostinelli:2002hh}
+@article{Agostinelli:2002hh,
+      author         = "Agostinelli, S. and others",
+      title          = "{GEANT4: A Simulation toolkit}",
+      collaboration  = "GEANT4",
+      journal        = "Nucl.Instrum.Meth.",
+      volume         = "A506",
+      pages          = "250-303",
+      doi            = "10.1016/S0168-9002(03)01368-8",
+      year           = "2003",
+      reportNumber   = "SLAC-PUB-9350, FERMILAB-PUB-03-339",
+      SLACcitation   = "%%CITATION = NUIMA,A506,250;%%",
+}
+
+@misc{refnova,
+	title = "The {NO}v{A} {E}xperiment",
+	howpublished = "\url{http://www-nova.fnal.gov/}",
+	year = "2017"
+}
+
+@misc{refmicroboone,
+	title = "The {M}icro{B}oo{NE} {E}xperiment",
+	howpublished = "\url{http://www-microboone.fnal.gov/}",
+	year = "2017"
+}
+
+@misc{refminerva,
+	title = "{MINER}v{A}",
+	howpublished = "\url{http://minerva.fnal.gov}",
+	year = "2017"
+}
+
+@misc{refsbnd,
+	title = "{S}hort-{B}aseline {N}ear {D}etector ({SBND})",
+	howpublished = "\url{http://sbn-nd.fnal.gov}",
+	year = "2017"
+}
+
+@misc{refdune,
+	title = "{D}eep {U}nderground {N}eutrino {E}xperiment",
+	howpublished = "\url{http://www.dunescience.org}",
+	year = "2017"
+}
+
+@misc{refminosplus,
+	title = "{MINOS+}",
+	howpublished = "\url{http://www-numi.fnal.gov/MinosPlus/minosPlus.html}",
+	year = "2017"
+}
+@misc{refminos,
+	title = "{MINOS}",
+	howpublished = "\url{http://www-numi.fnal.gov}",
+	year = "2017"
+}
+
+@misc{refargoneut,
+	title = "{A}rgo{N}eu{T}",
+	howpublished = "\url{http://t962.fnal.gov}",
+	year = "2017"
+}
+
+% Sam's xsec plot
+%%TODO - Bibtex for this from Spires
+@misc{samxsecplot,
+	author = "J. A. Formaggio and G. P. Zeller",
+	howpublished = "Rev. Mod. Phys 84 1307-1341",
+	year = "2012"
+}
+
+% Cite P5
+@misc{p5,
+	title = "{B}uilding for {D}iscovery: {S}trategic {P}lan for {U}.{S}. {P}article {P}hysics in the {G}lobal {C}ontext",
+	howpublished = "\url{http://www.usparticlephysics.org/p5/}",
+	year = "2014"
+}
+
+
+% cite Coloma et al's PRD on cyst. uncertainties in long-bs \cite{PhysRevD.87.033004}
+@article{PhysRevD.87.033004,
+  title = {Systematic uncertainties in long-baseline neutrino oscillations for large $\theta_{13}$},
+  author = {Coloma, Pilar and Huber, Patrick and Kopp, Joachim and Winter, Walter},
+  journal = {Phys. Rev. D},
+  volume = {87},
+  issue = {3},
+  pages = {033004},
+  numpages = {12},
+  year = {2013},
+  month = {Feb},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevD.87.033004},
+  url = {http://link.aps.org/doi/10.1103/PhysRevD.87.033004}
+}
+
+% cite the PDG, \cite{Agashe:2014kda}
+@article{Agashe:2014kda,
+      author         = "Olive, K.A. and others",
+      title          = "{Review of Particle Physics}",
+      collaboration  = "Particle Data Group",
+      journal        = "Chin.Phys.",
+      volume         = "C38",
+      pages          = "090001",
+      doi            = "10.1088/1674-1137/38/9/090001",
+      year           = "2014",
+      SLACcitation   = "%%CITATION = CHPHD,C38,090001;%%",
+}
+
+@article{Kopp:2013vaa,
+      author         = "Kopp, Joachim and Machado, Pedro A. N. and Maltoni,
+                        Michele and Schwetz, Thomas",
+      title          = "{Sterile Neutrino Oscillations: The Global Picture}",
+      journal        = "JHEP",
+      volume         = "1305",
+      pages          = "050",
+      doi            = "10.1007/JHEP05(2013)050",
+      year           = "2013",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ph",
+      reportNumber   = "IFT-UAM-CSIC-13-026",
+      SLACcitation   = "%%CITATION = ARXIV:1303.3011;%%",
+}
+
+@article{Aguilar-Arevalo:2013pmq,
+      author         = "Aguilar-Arevalo, A. A. and others",
+      title          = "{Improved Search for $\bar \nu_\mu \rightarrow \bar
+                        \nu_e$ Oscillations in the MiniBooNE Experiment}",
+      collaboration  = "MiniBooNE Collaboration",
+      journal        = "Phys.Rev.Lett.",
+      volume         = "110",
+      pages          = "161801",
+      doi            = "10.1103/PhysRevLett.110.161801",
+      year           = "2013",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "LA-UR-13-21523, FERMILAB-PUB-13-066-AD-E-PPD,
+                        arXiv:1303.2588",
+      SLACcitation   = "%%CITATION = ARXIV:1207.4809;%%",
+}
+
+@article{Aguilar:2001ty,
+      author         = "Aguilar, A. and others",
+      title          = "{Evidence for neutrino oscillations from the observation
+                        of anti-neutrino(electron) appearance in a
+                        anti-neutrino(muon) beam}",
+      collaboration  = "LSND Collaboration",
+      journal        = "Phys.Rev.",
+      volume         = "D64",
+      pages          = "112007",
+      doi            = "10.1103/PhysRevD.64.112007",
+      year           = "2001",
+      eprint         = "hep-ex/0104049",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      SLACcitation   = "%%CITATION = HEP-EX/0104049;%%",
+}
+
+@article{Hampel:1997fc,
+      author         = "Hampel, W. and others",
+      title          = "{Final results of the Cr-51 neutrino source experiments
+                        in GALLEX}",
+      collaboration  = "GALLEX Collaboration",
+      journal        = "Phys.Lett.",
+      volume         = "B420",
+      pages          = "114-126",
+      doi            = "10.1016/S0370-2693(97)01562-1",
+      year           = "1998",
+      reportNumber   = "DAPNIA-SPP-97-26, MPI-H-V41-1997, BNL-64864, ROM2F-97-45,
+                        TUM-SFB-375-221",
+      SLACcitation   = "%%CITATION = PHLTA,B420,114;%%",
+}
+
+
+@article{Abdurashitov:1998ne,
+      author         = "Abdurashitov, J. N. and others",
+      title          = "{Measurement of the response of the Russian-American
+                        gallium experiment to neutrinos from a Cr-51 source}",
+      collaboration  = "SAGE Collaboration",
+      journal        = "Phys.Rev.",
+      volume         = "C59",
+      pages          = "2246-2263",
+      doi            = "10.1103/PhysRevC.59.2246",
+      year           = "1999",
+      eprint         = "hep-ph/9803418",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ph",
+      reportNumber   = "SAGE-98-03",
+      SLACcitation   = "%%CITATION = HEP-PH/9803418;%%",
+}
+
+@article{Abdurashitov:2005tb,
+      author         = "Abdurashitov, J. N. and Gavrin, V. N. and Girin, S. V. and
+                        Gorbachev, V. V. and Gurkina, P. P. and others",
+      title          = "{Measurement of the response of a Ga solar neutrino
+                        experiment to neutrinos from an Ar-37 source}",
+      journal        = "Phys.Rev.",
+      volume         = "C73",
+      pages          = "045805",
+      doi            = "10.1103/PhysRevC.73.045805",
+      year           = "2006",
+      eprint         = "nucl-ex/0512041",
+      archivePrefix  = "arXiv",
+      primaryClass   = "nucl-ex",
+      SLACcitation   = "%%CITATION = NUCL-EX/0512041;%%",
+}
+
+@article{Mention:2011rk,
+      author         = "Mention, G. and Fechner, M. and Lasserre, Th. and
+                        Mueller, Th.A. and Lhuillier, D. and others",
+      title          = "{The Reactor Antineutrino Anomaly}",
+      journal        = "Phys.Rev.",
+      volume         = "D83",
+      pages          = "073006",
+      doi            = "10.1103/PhysRevD.83.073006",
+      year           = "2011",
+      eprint         = "1101.2755",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      SLACcitation   = "%%CITATION = ARXIV:1101.2755;%%",
+}
+@article{Aurisano:2016jvx,
+      author         = "Aurisano, A. and Radovic, A. and Rocco, D. and Himmel, A.
+                        and Messier, M. D. and Niner, E. and Pawloski, G. and
+                        Psihas, F. and Sousa, A. and Vahle, P.",
+      title          = "{A Convolutional Neural Network Neutrino Event
+                        Classifier}",
+      journal        = "JINST",
+      volume         = "11",
+      year           = "2016",
+      number         = "09",
+      pages          = "P09001",
+      doi            = "10.1088/1748-0221/11/09/P09001",
+      eprint         = "1604.01444",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "FERMILAB-PUB-16-082-ND",
+      SLACcitation   = "%%CITATION = ARXIV:1604.01444;%%"
+}
+@article{Habig:2015ehm,
+      author         = "Habig, Alec",
+      title          = "{The NOvA Experiment}",
+      booktitle      = "{Proceedings,  2015 European Physical Society Conference
+                        on High Energy Physics (EPS-HEP 2015): Vienna, Austria,
+                        July 22-29, 2015}",
+      collaboration  = "NOvA",
+      journal        = "PoS",
+      volume         = "EPS-HEP2015",
+      year           = "2015",
+      pages          = "044",
+      SLACcitation   = "%%CITATION = POSCI,EPS-HEP2015,044;%%"
+}
+
+@article{uB-MC-data,
+      author         = "Acciarri, et. al.",
+      title          = "{MicroBooNE Public Note 1014: 'A Comparison of Monte-Carlo Simulations and Data from MicroBooNE' }",
+      collaboration  = "MicroBooNE",
+      year           = "2016",
+      url = {http://www-microboone.fnal.gov/publications/publicnotes/MICROBOONE-NOTE-1014-PUB.pdf}
+}
+
+@article{elena-varuna-APS,
+      author         = "Acciarri, et. al.",
+      title          = "{ICHEP 2016 Poster: 'Kaon Tagging in MicroBooNE' }",
+      collaboration  = "MicroBooNE",
+      year           = "2016",
+      url = {http://www.ichep2016.org"}
+}
+
+
+@article{sk-ndk,
+      author         = "M. Miura",
+      title          = "{Search for Proton Decay via p to e+pi0 and mu+pi0 in 0.31 megaton-years exposure of the Super-Kamiokande Water Cherenkov Detector}",
+      journal        = "Phys. Rev. D",
+      volume         = "D95",
+      year           = "2017",
+      pages          = "012004",
+      collaboration  = "Super-Kamiokande",
+}
+
+@article{georgi,
+      author         = "H. Georgi, S.L. Glashow",
+      title          = "{Unity of All Elementary Particle Forces}",
+      journal        = "Phys. Rev. Lett.",
+      volume         = "32",
+      year           = "1974",
+      pages          = "438-441",
+}
+
