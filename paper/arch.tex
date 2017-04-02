@@ -242,21 +242,21 @@ MicroBooNE is the first large-scale LArTPC detector to collect data in a neutrin
 
 In this paper We will survey the relevant networks for image detection that are typical for LArTPCs and compare performance metrics. A particular characteristic of our images that makes them unique compared to other efforts on image classification is that our images are sparse. Tracks and showers and isolated electromagnetic activity produce a relatively small fraction of pixels that are activated in LArTPCs. This is true even for MicroBooNE's particular case in which the detector sits on the surface and sees a $\approx 5 $ kHz of through-going cosmic rays and associated activity.
 
-We want to survey networks that are well-used in the image recognition literature and explore the (hyper) parameters of those networks. This means we will explore the depth and width of networks, the existence of fully connected layers, stride sizes, as well as input sparsification and existence of things like ``bottlenecks,'' which is .... We will use variants of ResNet~\cite{}, Vgg16~\cite{} and ... One motivation of this exploration, in addition to seeking the best classification performance, is to see if networks that are less computationally expensive might in fact retain all performance of their more computationally expensive brethren networks, and thus might be used in their place.
+We want to survey networks that are well-used in the image recognition literature and explore the (hyper) parameters of those networks. This means we will explore the depth and width of networks, the existence of fully connected layers, stride sizes, as well as input sparsification and existence of things like ``bottlenecks,'' which is .... We will use variants of ResNet~\cite{}, Vgg16~\cite{} and ... One motivation of this exploration, in addition to seeking the best classification performance, is to see if networks that are less computationally expensive might in fact retain all performance of their more computationally expensive counterpart networks, and thus might be used in their place.
 
 The organization of this paper consists of a description of our single particle metrics, the preparation of the images, the training and inference protocol used here, and finally a description of the various architectures with results, followed by conclusions.
 
 
 \section{Particle Classification}
 
-We study the performance of five particle classification ($e^-$, $\gamma$, $\mu^-$, $\pi^-$, proton) using CNNs.
+We study the performance of five particle classification ($e^-$, $\gamma$, $\mu^-$, $\pi^-$, proton) using Convolutional Neural Networks (CNNs).
 
 \section{Image Preparation}
 
 Throughout all studies in this work, we use one of the most popular open-source CNN software frameworks, {\sc{Caffe}}~\cite{caffe}, for CNN training and analysis. Input data is in a ROOT file format~\cite{ROOT} created by the {\sc{LArCV}} software framework~\cite{LArCV}, which we developed to act as the interface between {\sc{LArSoft}} and {\sc{Caffe}}. {\sc{LArCV}} is also an image data processing framework and is used to further process and analyze images as described in the following sections. One can find our custom version of {\sc{Caffe}} that utilizes the {\sc{LArCV}} framework in \cite{LArCV}.  
 The computing hardware used in this study consists of multiple servers at various institutions. We have two dual-GPU 12 GByte memory, NVIDEA GPU servers of similar specifications at the Massachusetts Institute of Technology, Columbia University,  University of Michigan, Yale University. We also emply a DGX-1 10-GPU 18 GB/GPU server at Pacific Northwest National Laboratories.
 
-Seems like we ought to have a representative image picture here, as from the original CNN paper ...
+... representative image picture here, as from the original CNN paper ...
 
 \begin{figure}[t]
   \centering  
@@ -299,7 +299,7 @@ Why we want to stick with flavors of ResNet and Vgg here.
 \includegraphics[width=0.495\textwidth]{../vgg16b/part_mu-pi_vggb.png}\\
 \includegraphics[width=0.495\textwidth]{../vgg16b/part_e-gamma_vggb.png}\\
 \includegraphics[width=0.495\textwidth]{../vgg16b/part_show-trk_vggb.png}
-\caption{This is the five particle classification, and $\mu^-,\pi^-$, $e,\gamma$,proton and shower-track separations for the vgg16b network.}
+\caption{This is the (a) five particle classification, and (b) $\mu^-,\pi^-$, (c) $e,\gamma$, and (d) shower-track separations for the vgg16b network.}
   \label{fig:vgg16b}
 \end{figure}
 
@@ -312,7 +312,7 @@ Why we want to stick with flavors of ResNet and Vgg here.
 
 We have surveyed a variety of CNNs for the sake of classifying five charged particles as they appear in LArTPCs. Some interesting conclusions are that while Ref.~\cite{uB-JINST} achieved formidable performance, a few other networks do as well or better, and it is seen now that RestNetXYZ and VGG16XYZ are better choices.
 
-We plan to start with these networks for future physics-identification tasks in MicroBooNE; we believe similar guidance for general TPCs applies there, as well. We think, per this study, the full and infinite (hyper) parameter space for CNNs need not be explored in those future analyses.
+We plan to start with these networks for future physics-identification tasks in MicroBooNE; we believe similar guidance for general TPCs applies there, as well. We advocate, per this study, that the full and infinite (hyper) parameter space for CNNs need not be explored in those future analyses in favor of the identified best-performing networks here.
 
 %\appendix
 
