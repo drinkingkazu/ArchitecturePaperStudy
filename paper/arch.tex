@@ -238,19 +238,24 @@ Liquid argon time projection chambers (LArTPCs) produce image-like data that may
 %% Project Narrative %%
 \section{Introduction}
 
-MicroBooNE is the first large-scale LArTPC detector to collect data in a neutrino beam in the United States. The experiment has a total liquid argon mass of 170 tons and a rectangular active volume of 2.3$\times$2.6$\times$10.4 m$^3$. The system consists of two subdetectors: a time projection chamber (TPC) for tracking and calorimetry along with a light collection system for the detection of scintillation light. We consider here only the TPC information. In October 2015, the detector began observing interactions of neutrinos from the FNAL Booster Neutrino Beam (BNB)~\cite{BNB}.
+MicroBooNE is the first large-scale LArTPC detector to collect data in a neutrino beam in the United States. The experiment has a total liquid argon mass of 170 tons and a rectangular active volume of 2.3$\times$2.6$\times$10.4 m$^3$. The system consists of two subdetectors: a time projection chamber (TPC) for tracking and calorimetry along with a light collection system for the detection of scintillation light. We consider here only the TPC information. The detector began observing interactions of neutrinos from the FNAL Booster Neutrino Beam (BNB)~\cite{BNB} in October, 2015.
 
 
-In this paper We will survey the relevant networks for image detection that are typical for LArTPCs and compare performance metrics. A particular characteristic of our images that makes them unique compared to other efforts on image classification is that our images are sparse. Tracks and showers and isolated electromagnetic activity produce a relatively small fraction of pixels that are activated in LArTPCs. This is true even for MicroBooNE's particular case in which the detector sits on the surface and sees a $\approx 5 $ kHz of through-going cosmic rays and associated activity.
+In this paper We will survey the relevant networks for image detection that are typical for LArTPCs and compare performance metrics. A particular characteristic of our images that makes them unique compared to other efforts on image classification is that our images are sparse. Tracks and showers and isolated electromagnetic activity produce a relatively small fraction of pixels that are activated in LArTPCs. This is true even for MicroBooNE's particular case in which the detector sits on the surface and sees a $\approx 5 $ kHz of through-going cosmic rays and associated activity. Most of the roughly 9600x3000 pixels that constitute one of the three images for each event are at their pedestal value. A typical event is seen in Figure~\ref{fig:UBEVD}.
 
 We want to survey networks that are well-used in the image recognition literature and explore the (hyper) parameters of those networks. This means we will explore the depth and width of networks, the existence of fully connected layers, stride sizes, as well as input sparsification and existence of things like ``bottlenecks,'' which is .... We will use variants of ResNet~\cite{}, Vgg16~\cite{} and ... One motivation of this exploration, in addition to seeking the best classification performance, is to see if networks that are less computationally expensive might in fact retain all performance of their more computationally expensive counterpart networks, and thus might be used in their place.
 
 The organization of this paper consists of a description of our single particle metrics, the preparation of the images, the training and inference protocol used here, and finally a description of the various architectures with results, followed by conclusions.
 
+{\color{red} Outline roughly from 
+\begin{verbatim}https://docs.google.com/https://docs.google.com/document/d/1HalATQK5RneLrzhL2Tk-n-c1jI-7hXnXBNunSb13dQY
+\end{verbatim}
+}
+
 
 \section{Particle Classification}
 
-We study the performance of five particle classification ($e^-$, $\gamma$, $\mu^-$, $\pi^-$, proton) using Convolutional Neural Networks (CNNs).
+In this paper we study the performance of five particle classification ($e^-$, $\gamma$, $\mu^-$, $\pi^-$, proton) using a variety of Convolutional Neural Networks (CNNs). We simulate these particles in the momentum range of interest to MicroBooNE, namely over a flat 50-500 MeV/c, using the relevant Geant4-based LArSoft package~\cite{larsoft050800}. The tracks are mostly all contained in the fiducial volume. We anticipate the networks to learn to classify according to hints such as $dQ/ds$ differences at the end of tracks -- the Bragg peak -- and for overall $Q$ deposition differences, per the Bethe-Bloch curve for different particle species. We expect learning to proceed from macroscopic track-shower features, as well. We note, however, that unlike in the traditional cat, dog, human-face image data catalogs, we are faced with some level of irreducible ambiguity. In particular, $\mu$s and $\pi$s are minimum-ionizing particles which will only be discernable in the cases that, say, the $\mu^-$ captures or the $\pi^-$ scatters and produces a kink or inelastic interaction. There trajectories are frequently indistinguishable. Therefore, we will not be surprised by some level of confusion in our networks between particular species.
 
 \section{Image Preparation}
 
@@ -271,12 +276,15 @@ The computing hardware used in this study consists of multiple servers at variou
 
 \section {Training and Inference}
 
-A disciplined training and inference procedure is required in order to make the comparisons we wish to make.
+A disciplined training and inference procedure is required in order to compare different networks to each other. We describe our procedure here. Our training sample consists of 2000 events of each particle type. The testing sample consists of 10000 more images. This is sample A. We let the training run in the normal iterative way, watching the testing sample A's Loss plot at each iteration. Our batch size is about 20 images, the complete forward/backward pass through each of which marks an iteration. When the Loss has achieved its minimum and begins to rise again, such that the global minimum is reached at 85\% or less of the total number of iterations we stop the training and note the iteration value. The goal is to see that learning has plateaued before we stop training. We then run the inference stage on the Test sample A, using the weight file at the identified minimum plus/minus about 5 Epochs. We want to see that the learning is stable, and we can account for any epoch-to-epoch jitter.
+
+The best inference run on a given epoch in sample A is then identified as the weight file to be used in the final inference stage to be run on a new sample of simulated data, B.
+
 
 \section {The Architectures}
 
 Broad descriptions here of ResNet and Vgg16 and whatever else we have results for.  GoogleNet, AlexNet?
-Why we want to stick with flavors of ResNet and Vgg here.
+Why we want to stick with flavors of ResNet and Vgg here. Perhaps we don't want each flovor of ResNet and Vgg16 to be its own subsection.
 
 {\color{red} Not to be included, but for convenience, all results are\/should-be referenced at 
 \begin{verbatim}https://docs.google.com/presentation/d/1Rvo2Yt9KqRQk2eDyO1WeA5GwaWamLvZR2CR3txfYbBE/edit#slide=id.g1ec338afdf_0_11. We probably don't want to exhaustively provide all plots for all networks ...
@@ -296,12 +304,37 @@ Why we want to stick with flavors of ResNet and Vgg here.
 
 \begin{figure}[t]
   \centering  
-\includegraphics[width=0.3\textwidth]{../vgg16b/part5_vggb.png}\\
-\includegraphics[width=0.3\textwidth]{../vgg16b/part_mu-pi_vggb.png}\\
-\includegraphics[width=0.3\textwidth]{../vgg16b/part_e-gamma_vggb.png}\\
-\includegraphics[width=0.3\textwidth]{../vgg16b/part_show-trk_vggb.png}
-\caption{This is the (a) five particle classification, and (b) $\mu^-,\pi^-$, (c) $e,\gamma$, and (d) shower-track separations for the vgg16b network.}
-  \label{fig:vgg16b}
+\begin{subfigure}[t]{0.45\textwidth}
+\centering
+\includegraphics[width=\textwidth]{../vgg16b/part5_vggb.png}\\
+\label{a}
+\caption{The Accuracy for 5 species classification}
+\end{subfigure}%
+\hfill
+\begin{subfigure}[t]{0.45\textwidth}
+\centering
+\includegraphics[width=\textwidth]{../vgg16b/part_mu-pi_vggb.png}\\
+\label{b}
+\caption{$\mu/\pi$ classification.}
+\end{subfigure}%
+
+\bigskip
+
+\begin{subfigure}[t]{0.45\textwidth}
+\centering
+\includegraphics[width=\textwidth]{../vgg16b/part_e-gamma_vggb.png}\\
+\label{c}
+\caption{$e/\gamma$ classification}
+\end{subfigure}%
+\hfill
+\begin{subfigure}[t]{0.45\textwidth}
+\centering
+\includegraphics[width=\textwidth]{../vgg16b/part_show-trk_vggb.png}
+\label{d}
+\caption{$e/\gamma$ versus $\mu,\pi,p$ classification}
+\end{subfigure}%
+\caption{This is the (a) five particle classification, and (b) $\mu^-/\pi^-$, (c) $e/\gamma$, and (d) shower/track separations for the vgg16b network.}
+\label{fig:vgg16b}
 \end{figure}
 
 
