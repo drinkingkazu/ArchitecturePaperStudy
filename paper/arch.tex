@@ -20,6 +20,7 @@
 \usepackage{bm}
 \usepackage{fancyhdr}
 \usepackage{color}
+\usepackage{graphicx}
 
 \pagestyle{fancy}
 %%% How deep do we count in ``sub''sections...
@@ -48,7 +49,7 @@
 \collaboration{MicroBooNE Collaboration}
 
 \abstract{
-Liquid argon time projection chambers (LArTPCs) produce image-like data that may be analyzed with deep neural networks (Deep Learning, or DL). This approach to data analysis is becoming more common in LArTPCs, as well as other high channel-count segmented detectors where the events leave imprints on the detector that may be interpreted as images. In particular, MicroBooNE is an 8256 wire detector viewing 89 tons fiducial liquid argon where DL studies have been performed~\cite{uB-JINST} and show great promise. That study showed progress in single particle classification as well as progress toward neutrino identification, using networks that were not necessarily chosen to be optimal. This paper reports results on single particle classification using DL network architectures in which the literature or experience suggest further progress can be made on images such as ours. We answer key questions about performance  on this problem as a function of network architectures and show that networks \_\_, \_\_ and \_\_ give functionally equivalent high performance, with gains in network \_\_ in resource consumption that suggest its use.
+Liquid Argon Time Projection Chambers (LArTPCs) produce image-like data that may be analyzed with deep neural networks (Deep Learning, or DL). This approach to data analysis is becoming more common in LArTPCs, as well as other high channel-count segmented detectors where events may be interpreted as images. In particular, MicroBooNE is an 8256 wire detector viewing 89 tons of fiducial liquid argon, where studies have demonstrated single particle classification capability using DL as well as progress toward DL neutrino identification \cite{uB-JINST}. In the case of these previous studies, the performance dependence on a variety of network architecture types was not explored in great depth.  Using the same single particle classification metric, this paper seeks to provide a baseline of guidance for choosing the optimal network for the task at hand.  We answer key questions about performance as a function of network architectures and show that networks \_\_, \_\_ and \_\_ give functionally equivalent high performance, with gains in network \_\_ in resource consumption that suggest its use.
 }
 
 \begin{document}
@@ -238,31 +239,18 @@ Liquid argon time projection chambers (LArTPCs) produce image-like data that may
 %% Project Narrative %%
 \section{Introduction}
 
-MicroBooNE is the first large-scale LArTPC detector to collect data in a neutrino beam in the United States. The experiment has a total liquid argon mass of 170 tons and a rectangular active volume of 2.3$\times$2.6$\times$10.4 m$^3$. The system consists of two subdetectors: a time projection chamber (TPC) for tracking and calorimetry along with a light collection system for the detection of scintillation light. We consider here only the TPC information. The detector began observing interactions of neutrinos from the FNAL Booster Neutrino Beam (BNB)~\cite{BNB} in October, 2015.
+MicroBooNE is the first large-scale LArTPC detector to collect data in a neutrino beam in the United States. The experiment has a total liquid argon mass of 170 tons and a rectangular active volume of 2.3$\times$2.6$\times$10.4 m$^3$. The system consists of two subdetectors: a time projection chamber (TPC) for tracking and calorimetry along with a light collection system for the detection of scintillation light.  The detector began observing interactions of neutrinos from the FNAL Booster Neutrino Beam (BNB)~\cite{BNB} in October, 2015.
+
+The information we consider in these performance studies is TPC readout only. Here, TPC information comes in the form of 3 wire readout planes, where each plane represents 1 image.  Unlike the images normally used in image classification tasks, MicroBooNE's images are sparse; this means that most of the roughly 9600x3000 image pixels are at their pedestal value for each event. The complications and final handling of such sized images is discussed in detail in a previous paper \cite{uB-JINST}. A typical event is shown in Figure~\ref{fig:UBEVD}.
+
+%In this paper we will survey the performance of various networks on image detection in LArTPCs. 
+%Tracks, showers and isolated electromagnetic activity produce a relatively small fraction of pixels that are activated in LArTPCs. This is true even for MicroBooNE's particular case in which the detector sits on the surface and sees a $\approx 5 $ kHz of through-going cosmic rays and associated activity.
+
+In this paper, we survey variants of 2 well-used networks in image recognition literature: ResNet ~\cite{} and Vgg16 ~\cite{}. We are interested in both their parameters and architectures, which means we will explore the depth and width of these networks, the addition of fully connected layers, stride sizes, input sparsification, and ``bottlenecks.''  We seek to understand whether or not networks that are less computationally expensive can match their more expensive counterpart networks in performance, in addition to seeking highest classification performance. 
+%and thus might be used in their place.
 
 
-In this paper We will survey the relevant networks for image detection that are typical for LArTPCs and compare performance metrics. A particular characteristic of our images that makes them unique compared to other efforts on image classification is that our images are sparse. Tracks and showers and isolated electromagnetic activity produce a relatively small fraction of pixels that are activated in LArTPCs. This is true even for MicroBooNE's particular case in which the detector sits on the surface and sees a $\approx 5 $ kHz of through-going cosmic rays and associated activity. Most of the roughly 9600x3000 pixels that constitute one of the three images for each event are at their pedestal value. A typical event is seen in Figure~\ref{fig:UBEVD}.
-
-We want to survey networks that are well-used in the image recognition literature and explore the (hyper) parameters of those networks. This means we will explore the depth and width of networks, the existence of fully connected layers, stride sizes, as well as input sparsification and existence of things like ``bottlenecks,'' which is .... We will use variants of ResNet~\cite{}, Vgg16~\cite{} and ... One motivation of this exploration, in addition to seeking the best classification performance, is to see if networks that are less computationally expensive might in fact retain all performance of their more computationally expensive counterpart networks, and thus might be used in their place.
-
-The organization of this paper consists of a description of our single particle metrics, the preparation of the images, the training and inference protocol used here, and finally a description of the various architectures with results, followed by conclusions.
-
-{\color{red} Outline roughly from 
-\begin{verbatim}https://docs.google.com/https://docs.google.com/document/d/1HalATQK5RneLrzhL2Tk-n-c1jI-7hXnXBNunSb13dQY
-\end{verbatim}
-}
-
-
-\section{Particle Classification}
-
-In this paper we study the performance of five particle classification ($e^-$, $\gamma$, $\mu^-$, $\pi^-$, proton) using a variety of Convolutional Neural Networks (CNNs). We simulate these particles in the momentum range of interest to MicroBooNE, namely over a flat 50-500 MeV/c, using the relevant Geant4-based LArSoft package~\cite{larsoft050800}. The tracks are mostly all contained in the fiducial volume. We anticipate the networks to learn to classify according to hints such as $dQ/ds$ differences at the end of tracks -- the Bragg peak -- and for overall $Q$ deposition differences, per the Bethe-Bloch curve for different particle species. We expect learning to proceed from macroscopic track-shower features, as well. We note, however, that unlike in the traditional cat, dog, human-face image data catalogs, we are faced with some level of irreducible ambiguity. In particular, $\mu$s and $\pi$s are minimum-ionizing particles which will only be discernable in the cases that, say, the $\mu^-$ captures or the $\pi^-$ scatters and produces a kink or inelastic interaction. Their trajectories are frequently indistinguishable. Therefore, we will not be surprised by some level of confusion in our networks between particular species.
-
-\section{Image Preparation}
-
-Throughout all studies in this work, we use one of the most popular open-source CNN software frameworks, {\sc{Caffe}}~\cite{caffe}, for CNN training and analysis. Input data is in a ROOT file format~\cite{ROOT} created by the {\sc{LArCV}} software framework~\cite{LArCV}, which we developed to act as the interface between {\sc{LArSoft}} and {\sc{Caffe}}. {\sc{LArCV}} is also an image data processing framework and is used to further process and analyze images as described in the following sections. One can find our custom version of {\sc{Caffe}} that utilizes the {\sc{LArCV}} framework in \cite{LArCV}.  
-The computing hardware used in this study consists of multiple servers at various institutions. We have two dual-GPU 12 GByte memory, NVIDEA GPU servers of similar specifications at the Massachusetts Institute of Technology, Columbia University,  University of Michigan, Yale University. We also emply a DGX-1 10-GPU 18 GB/GPU server at Pacific Northwest National Laboratories.
-
-... representative image picture here, as from the original CNN paper ...
+The organization of this paper consists of a description of our single particle metrics, the preparation of the images, the training and inference protocol used, and finally a description of the various architectures with results, followed by conclusions.
 
 \begin{figure}[t]
   \centering  
@@ -274,46 +262,149 @@ The computing hardware used in this study consists of multiple servers at variou
 \end{figure}
 
 
+%{\color{red} Outline roughly from 
+%\begin{verbatim}https://docs.google.com/https://docs.google.com/document/d/1HalATQK5RneLrzhL2Tk-n-c1jI-7hXnXBNunSb13dQY
+%\end{verbatim} }
+
+\section{Particle Classification}
+
+In this paper we study the performance of five particle classification ($e^-$, $\gamma$, $\mu^-$, $\pi^-$, proton) using a variety of Convolutional Neural Networks (CNNs). We simulate these particles in the 50-500 MeV/c momentum range of interest to MicroBooNE using the relevant Geant4-based LArSoft package~\cite{larsoft050800}.  The $e^-$ and $\gamma$ are electromagnetic particles that develop as showery objects in the detector. These are generally distinguishable by eye from their $\mu^-$, $\pi^-$ and proton track-like counterparts, which form more linear traces in the detector.  The networks learn these features and others to make final identification. Such other distinguishing characteristics include $dQ/ds$ variation at track ends (Bragg peak) and total $Q$ deposition differences, per the Bethe-Bloch curves for different particle species.  We note, however, that unlike a more traditional case of cat, dog, human-face image data separation, we are faced with some level of irreducible ambiguity in our five particle classification. In particular, $\mu^-$'s and $\pi^-$s are minimum-ionizing particles which will only be discernable in the cases that, say, the $\mu^-$ captures or the $\pi^-$ scatters and produces a kink or inelastic interaction. Additionally, sometimes the simulated $\pi^-$ will even decay to a $\mu^-$.  Therefore, we expect lower separation power between these particular species.
+
+\begin{figure}[t]
+  \centering  
+\includegraphics[width=0.8\textwidth]{Figures/five_part_types.png}
+
+\caption{Example display for classification of each particle type in the collection plane.  From top left and moving clockwise: $e^-$, $\gamma$, $\mu^-$, proton, and $\pi^-$. (Should this cite previous paper again? Image?}
+  \label{fig:fiveparts}
+\end{figure}
+
+%The tracks are mostly all contained in the fiducial volume.
+
+\section{Image Preparation}
+
+Throughout all studies in this work, we use one of the most popular open-source CNN software frameworks, {\sc{Caffe}}~\cite{caffe}, for CNN training and analysis. Input data is in a ROOT file format~\cite{ROOT} created by the {\sc{LArCV}} software framework~\cite{LArCV}, which we developed to act as the interface between {\sc{LArSoft}} and {\sc{Caffe}}. {\sc{LArCV}} is also an image data processing framework and is used to further process and analyze images as described in the following sections. One can find our custom version of {\sc{Caffe}} that utilizes the {\sc{LArCV}} framework in \cite{LArCV}.  
+The computing hardware used in this study consists of multiple servers at various institutions. We have two dual-GPU 12 GByte memory, NVIDEA GPU servers of similar specifications at the Massachusetts Institute of Technology, Columbia University,  University of Michigan, Yale University. We also emply a DGX-1 10-GPU 18 GB/GPU server at Pacific Northwest National Laboratories.
+
+... representative image picture here, as from the original CNN paper ... Figure \ref{fig:towerpower}
+
+\begin{figure}[t]
+  \centering  
+\includegraphics[width=0.495\textwidth]{Figures/tower_power.png}\\
+\caption{One example of GPU tower employed in the training (is this the representative image referred to?)}
+  \label{fig:towerpower}
+\end{figure}
+
+
 \section {Training and Inference}
 
-A disciplined training and inference procedure is required in order to compare different networks to each other. We describe our procedure here. Our training sample consists of 2000 events of each particle type. The testing sample consists of 10000 more images. This is sample A. We let the training run in the normal iterative way, watching the testing sample A's Loss plot at each iteration. Our batch size is about 20 images, the complete forward/backward pass through each of which marks an iteration. When the Loss has achieved its minimum and begins to rise again, such that the global minimum is reached at 85\% or less of the total number of iterations we stop the training and note the iteration value. The goal is to see that learning has plateaued before we stop training. We then run the inference stage on the Test sample A, using the weight file at the identified minimum plus/minus about 5 Epochs. We want to see that the learning is stable, and we can account for any epoch-to-epoch jitter.
+A disciplined training and inference procedure is required in order to compare the performance of various networks. This procedure is as follows: First, we organize a training sample of 2000 events of each particle type. We additionally create 2 testing samples A and B: test A contain 10000 events and will be used to choose a weight file from the training, while test B contain 30000 and will be used for final performance reporting.  Our training uses a batch size of 20 images, and runs iteratively where the complete forward/backward pass through each batch marks an iteration. During this time, the testA set's loss curve is monitored. When the loss has achieved its global minimum and begins to rise again, such that this minimum is reached at 85\% or less of the total number of iterations, we stop training and note the iteration value. The goal is to ensure that learning has plateaued before we stop training. To ensure that the learning is stable at this observed minimum, we run the inference stage on the test A sample at the minimum iteration $\pm$ 5 epochs.  
 
-The best inference run on a given epoch in sample A is then identified as the weight file to be used in the final inference stage to be run on a new sample of simulated data, B.
+The best inference run on a given epoch in test sample A is then identified as the weight file to be used in the final inference stage. This final inference in run on test sample B, and is used to extract final performance numbers.
 
 
 \section {The Architectures}
-
+%\subsection{Original CNN paper architectures}
 Broad descriptions here of ResNet and Vgg16 and whatever else we have results for.  GoogleNet, AlexNet?
-Why we want to stick with flavors of ResNet and Vgg here. Perhaps we don't want each flovor of ResNet and Vgg16 to be its own subsection.
+Why we want to stick with flavors of ResNet and Vgg here. Perhaps we don't want each flavor of ResNet and Vgg16 to be its own subsection.
+
+\subsection{ResNet}
+The first networks considered here are ResNet networks \cite{bib:resnet}. ResNets are made up primarily of residual convolutional modules, where each module represents a layer of the network. The general purpose of these modules is to preserve information learned in previous layers using an identity mapping, and to optimize from there. In other words, the modules refocus the network training from a function over feature space to to a residual of that function over feature space. Networks constructed from these modules have been shown to improve performance as network depth increases while also to decrease computational training time \cite{bib:resmodule}.  
+
+\par ResNet is built on the idea that an increase in depth will lead to an increase in performance. For this reason, one of our primary goals here is to measure the computational costs of added depths to assess whether this depth is worth the extra resources it consumes. We additionally explore the width of the network and the addition of bottleneck feature (citation).  An example of inference results on the testA sample is shown in Figure \ref{fig:inferenceA}; the weight file used to calculate final performance on testB is extracted from this plot.  This weight file is then used to run inference on testB.  The results from this second inference run are shown in Table \ref{tab:classCompare}. Additional efficiency vs purity curves are shown in Figure \ref{fig:resneteffpur}.\\
+
+\begin{figure}[t]
+  \centering  
+\includegraphics[width=0.6\textwidth]{Figures/testAinference.png}\\
+\caption{Example of inference results on the testA sample for $\pm$ 5 epochs around global loss minimum. The weight file for final performance assessment on testB is chosen based on the point of overall maximum accuracy in this plot. }
+  \label{fig:inferenceA}
+\end{figure}
+
+\par \noindent
+\vspace{2 mm}
+\begin{minipage}{\linewidth}
+\centering
+\captionof{table}{The right five columns denote the classification performance per particle type. Errors shown are statistical
+and assume a binomial distribution. } \label{tab:classCompare} 
+\begin{tabular}{clllll}
+ & \multicolumn{5}{c}{Classified Particle Type} \\
+\cline{2-6}
+\vspace{-0.1in}\\
+\vspace{0.05in}
+Network & $e^-$ [\%] & $\gamma$ [\%] & $\mu^-$ [\%] & $\pi^-$ [\%] & proton [\%] \\
+\hline 
+\vspace{-0.1in}\\
+\vspace{0.05in}
+ ResNet14b & 84.8 $\pm 0.2$ & 85.0 $\pm 0.2$  & 90.5 $\pm 0.2$ & 76.0 $\pm 0.2$ & 94.0 $\pm 0.1$ \\ 
+ \vspace{0.05in}
+ ResNet29b & 87.2 $\pm 0.2$ & 86.7 $\pm 0.2$  & 90.7 $\pm 0.2$ & 78.8 $\pm 0.2$ & 96.8 $\pm 0.1$ \\ 
+ \vspace{0.05in}
+ ResNet29b\_w4 & 87.9 $\pm 0.2 $ & 86.0 $\pm 0.2$  & 90.6 $\pm 0.2$ & 78.9 $\pm 0.2$ & 96.2 $\pm 0.1$ \\ 
+ \vspace{0.05in}
+ ResNet50b & 87.7 $\pm 0.2$ & 85.9 $\pm 0.2$  & 93.1 $\pm 0.1$ & 78.5 $\pm 0.2$ & 96.2 $\pm 0.1$ \\ 
+ \vspace{0.05in}
+    \end{tabular}
+\end{minipage}
+
+\par \noindent
+\vspace{2 mm}
+\begin{minipage}{\linewidth}
+\centering
+\captionof{table}{Computational performance for various ResNet architectures} \label{tab:resnetComput} 
+\begin{tabular}{cllllll}
+ & \multicolumn{5}{c}{NUMBER CURRENTLY WRONG} \\
+\cline{2-6}
+\vspace{-0.1in}\\
+\vspace{0.05in}
+Network & Mem (MB) & Wall Time (s) & IO Wait Time (s) & IO Thread Time (s) & IO Thread Copy Time & Caffe Copy Time(s) [\%] \\
+\hline 
+\vspace{-0.1in}\\
+\vspace{0.05in}
+ ResNet14b & 84.8 $\pm 0.2$ & 85.0 $\pm 0.2$  & 90.5 $\pm 0.2$ & 76.0 $\pm 0.2$ & 94.0 $\pm 0.1$ & 0. \\ 
+ \vspace{0.05in}
+ ResNet29b & 87.2 $\pm 0.2$ & 86.7 $\pm 0.2$  & 90.7 $\pm 0.2$ & 78.8 $\pm 0.2$ & 96.8 $\pm 0.1$ & 0 \\ 
+ \vspace{0.05in}
+ ResNet29b\_w4 & 87.9 $\pm 0.2 $ & 86.0 $\pm 0.2$  & 90.6 $\pm 0.2$ & 78.9 $\pm 0.2$ & 96.2 $\pm 0.1$ & 0 \\ 
+ \vspace{0.05in}
+ ResNet50b & 87.7 $\pm 0.2$ & 85.9 $\pm 0.2$  & 93.1 $\pm 0.1$ & 78.5 $\pm 0.2$ & 96.2 $\pm 0.1$ & 0\\ 
+ \vspace{0.05in}
+    \end{tabular}
+\end{minipage}
+
+\begin{figure}[t]
+  \centering  
+\includegraphics[width=0.6\textwidth]{Figures/resneteffpur.png}\\
+\caption{Efficiency vs purity curves for all resnet networks.  As expected, ResNet14b is on the lower end, while the others are fairly comparable. }
+  \label{fig:resneteffpur}
+\end{figure}
+
+
+\par From Table \ref{tab:classCompare} and Table \ref{tab:resnetComput} we can conclude several things.  First, we see that in general, performance increases as depth increase.  (We seee from Kevin's slides that resources usage also increases with depth). From the Resnet29b\_w4 results we see that increasing the width of the Resnet results in minimal performance increase at the high cost of computational resources.  We also see that the bottleneck architecture increases performance minimally at the expense of resources (from Kevin's slides).  We conclude here that resnet29 is the best choice of the ResNet in terms of computational and overall performance.  
+
+\subsection{VGG}
+
 
 {\color{red} Not to be included, but for convenience, all results are\/should-be referenced at 
 \begin{verbatim}https://docs.google.com/presentation/d/1Rvo2Yt9KqRQk2eDyO1WeA5GwaWamLvZR2CR3txfYbBE/edit#slide=id.g1ec338afdf_0_11. We probably don't want to exhaustively provide all plots for all networks ...
 \end{verbatim}
 }
 
-\subsection{Original CNN paper architectures}
-
-\subsection{ResNet14b}
-
-\subsection{ResNet14b\_w2}
-
-
-\subsection{vgg16a}
-
-\subsection{vgg16b}
+%\subsection{ResNet14b}
+%\subsection{ResNet14b\_w2}
+%\subsection{vgg16a}
+%\subsection{vgg16b}
 
 \begin{figure}[t]
   \centering  
 \begin{subfigure}[t]{0.45\textwidth}
 \centering
-\includegraphics[width=\textwidth]{../vgg16b/part5_vggb.png}\\
+\includegraphics[width=\textwidth]{../vgg16b/part5_vggb.png}
 \label{a}
 \caption{The Accuracy for 5 species classification}
 \end{subfigure}%
 \hfill
 \begin{subfigure}[t]{0.45\textwidth}
 \centering
-\includegraphics[width=\textwidth]{../vgg16b/part_mu-pi_vggb.png}\\
+\includegraphics[width=\textwidth]{../vgg16b/part_mu-pi_vggb.png}
 \label{b}
 \caption{$\mu/\pi$ classification.}
 \end{subfigure}%
@@ -322,7 +413,7 @@ Why we want to stick with flavors of ResNet and Vgg here. Perhaps we don't want 
 
 \begin{subfigure}[t]{0.45\textwidth}
 \centering
-\includegraphics[width=\textwidth]{../vgg16b/part_e-gamma_vggb.png}\\
+\includegraphics[width=\textwidth]{../vgg16b/part_e-gamma_vggb.png}
 \label{c}
 \caption{$e/\gamma$ classification}
 \end{subfigure}%
@@ -336,10 +427,7 @@ Why we want to stick with flavors of ResNet and Vgg here. Perhaps we don't want 
 \caption{This is the (a) five particle classification, and (b) $\mu^-/\pi^-$, (c) $e/\gamma$, and (d) shower/track separations for the vgg16b network.}
 \label{fig:vgg16b}
 \end{figure}
-
-
-\subsection{vgg16c}
-
+%\subsection{vgg16c}
 
 
 \section {Conclusions}
@@ -465,6 +553,12 @@ average of its recent magnitude,'' COURSERA: Neural Networks for Machine Learnin
 
 \bibitem{stabilitytraining}
   Zheng {\it et al.}, ``Improving the Robustness of Deep Neural Networks via Stability Training,'' \emph{arXiv:1604.04326}.
+
+\bibitem{bib:resmodule}
+Szegedy {\it et al.}, ``Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning,'' \emph{arXiv:1602.07261}.
+
+\bibitem{bib:resnet}
+Kaiming He {\it et al.}, ``Deep Residual Learning for Image Recognition,'' \emph{arXiv:1512.03385}.
 
 \end{thebibliography}
 \end{document}
