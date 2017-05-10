@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  19 APR 2017 15:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  10 MAY 2017 12:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1047,25 +1047,25 @@ been already used, duplicate ignored
                    \relax 
 l.237 \newpage
                [1] [2]
-<Figures/five_part_types.png, id=84, 507.8975pt x 768.8725pt>
+<Figures/five_part_types.png, id=79, 507.8975pt x 768.8725pt>
 File: Figures/five_part_types.png Graphic file (type png)
 
 <use Figures/five_part_types.png>
 Package pdftex.def Info: Figures/five_part_types.png used on input line 275.
 (pdftex.def)             Requested size: 344.16641pt x 521.03139pt.
  [3 <./Figures/five_part_types.png>]
-<Figures/tower_power.png, id=97, 1006.76125pt x 742.775pt>
+<Figures/tower_power.png, id=92, 890.82813pt x 708.6475pt>
 File: Figures/tower_power.png Graphic file (type png)
 
 <use Figures/tower_power.png>
 Package pdftex.def Info: Figures/tower_power.png used on input line 292.
-(pdftex.def)             Requested size: 212.95006pt x 157.10939pt.
+(pdftex.def)             Requested size: 212.95006pt x 169.39764pt.
  [4 <./Figures/tower_power.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 313--314
 
  []
 
-<Figures/testAinference.png, id=112, 806.01125pt x 588.1975pt>
+<Figures/testAinference.png, id=107, 806.01125pt x 588.1975pt>
 File: Figures/testAinference.png Graphic file (type png)
 
 <use Figures/testAinference.png>
@@ -1078,48 +1078,74 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (1.64243pt too wide) in paragraph at lines 322--347
+Overfull \hbox (1.64243pt too wide) in paragraph at lines 322--370
  $[]$ 
  []
 
+[5]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 352.
+(caption)                particular \caption on input line 375.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (197.12082pt too wide) in paragraph at lines 353--371
+Overfull \hbox (197.12082pt too wide) in paragraph at lines 376--394
  [][] 
  []
 
 
-Overfull \hbox (1.64243pt too wide) in paragraph at lines 348--372
+Overfull \hbox (1.64243pt too wide) in paragraph at lines 371--395
  $[]$ 
  []
 
-[5] <Figures/resneteffpur.png, id=123, 758.835pt x 588.1975pt>
-File: Figures/resneteffpur.png Graphic file (type png)
+[6 <./Figures/testAinference.png>]
+<Figures/resnet_effpur.png, id=123, 873.2625pt x 582.175pt>
+File: Figures/resnet_effpur.png Graphic file (type png)
 
-<use Figures/resneteffpur.png>
-Package pdftex.def Info: Figures/resneteffpur.png used on input line 375.
-(pdftex.def)             Requested size: 258.12645pt x 200.08322pt.
-LaTeX Font Info:    Try loading font information for T1+newtxtt on input line 3
-87.
+<use Figures/resnet_effpur.png>
+Package pdftex.def Info: Figures/resnet_effpur.png used on input line 398.
+(pdftex.def)             Requested size: 193.59155pt x 129.05605pt.
+
+<Figures/vgg_effpur.png, id=124, 851.18pt x 594.22pt>
+File: Figures/vgg_effpur.png Graphic file (type png)
+
+<use Figures/vgg_effpur.png>
+Package pdftex.def Info: Figures/vgg_effpur.png used on input line 400.
+(pdftex.def)             Requested size: 193.59155pt x 135.14445pt.
+
+<Figures/plainresnet_effpur.png, id=125, 840.13875pt x 577.15625pt>
+File: Figures/plainresnet_effpur.png Graphic file (type png)
+
+<use Figures/plainresnet_effpur.png>
+Package pdftex.def Info: Figures/plainresnet_effpur.png used on input line 407.
+
+(pdftex.def)             Requested size: 193.59155pt x 132.98973pt.
+
+<Figures/all_effpur.png, id=126, 861.2175pt x 585.18625pt>
+File: Figures/all_effpur.png Graphic file (type png)
+
+<use Figures/all_effpur.png>
+Package pdftex.def Info: Figures/all_effpur.png used on input line 409.
+(pdftex.def)             Requested size: 193.59155pt x 131.53621pt.
+ [7 <./Figures/resnet_effpur.png> <./Figures/vgg_effpur.png> <./Figures/plainre
+snet_effpur.png> <./Figures/all_effpur.png>]
+LaTeX Font Info:    Try loading font information for T1+newtxtt on input line 4
+29.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/newtxtt/t1newtxtt.fd
 File: t1newtxtt.fd 2014/12/23 Font definitions for T1/newtxtt.
 )
 LaTeX Font Info:    Font shape `T1/newtxtt/m/n' will be
-(Font)              scaled to size 10.95pt on input line 387.
+(Font)              scaled to size 10.95pt on input line 429.
 
-Overfull \hbox (679.29918pt too wide) in paragraph at lines 388--388
+Overfull \hbox (679.29918pt too wide) in paragraph at lines 430--430
 []\T1/newtxtt/m/n/10.95 https://docs.google.com/presentation/d/1Rvo2Yt9KqRQk2eD
 yO1WeA5GwaWamLvZR2CR3txfYbBE/edit#slide=id.g1ec338afdf_0_11. We probably don't 
 want to exhaustively provide all plots for all networks ... 
  []
 
 
-LaTeX Warning: File `../vgg16b/part5_vggb.png' not found on input line 400.
+LaTeX Warning: File `../vgg16b/part5_vggb.png' not found on input line 442.
 
 
 ! Package pdftex.def Error: File `../vgg16b/part5_vggb.png' not found.
@@ -1128,11 +1154,11 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.400 ...dth=\textwidth]{../vgg16b/part5_vggb.png}
+l.442 ...dth=\textwidth]{../vgg16b/part5_vggb.png}
                                                   
 ? 
 
-LaTeX Warning: File `../vgg16b/part_mu-pi_vggb.png' not found on input line 407
+LaTeX Warning: File `../vgg16b/part_mu-pi_vggb.png' not found on input line 449
 .
 
 
@@ -1142,12 +1168,12 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.407 ...textwidth]{../vgg16b/part_mu-pi_vggb.png}
+l.449 ...textwidth]{../vgg16b/part_mu-pi_vggb.png}
                                                   
 ? 
 
 LaTeX Warning: File `../vgg16b/part_e-gamma_vggb.png' not found on input line 4
-16.
+58.
 
 
 ! Package pdftex.def Error: File `../vgg16b/part_e-gamma_vggb.png' not found.
@@ -1156,12 +1182,12 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.416 ...xtwidth]{../vgg16b/part_e-gamma_vggb.png}
+l.458 ...xtwidth]{../vgg16b/part_e-gamma_vggb.png}
                                                   
 ? 
 
 LaTeX Warning: File `../vgg16b/part_show-trk_vggb.png' not found on input line 
-423.
+465.
 
 
 ! Package pdftex.def Error: File `../vgg16b/part_show-trk_vggb.png' not found.
@@ -1170,68 +1196,57 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.423 ...twidth]{../vgg16b/part_show-trk_vggb.png}
+l.465 ...twidth]{../vgg16b/part_show-trk_vggb.png}
                                                   
 ? 
-[6 <./Figures/testAinference.png>] [7 <./Figures/resneteffpur.png>]
+[8] [9]
 LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <10> not available
-(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 451.
+(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 493.
 
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 10.0pt on input line 451.
- [8]
+(Font)              scaled to size 10.0pt on input line 493.
 LaTeX Font Info:    Font shape `T1/newtxtt/m/n' will be
-(Font)              scaled to size 10.0pt on input line 481.
-
-[9]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 564.
+(Font)              scaled to size 10.0pt on input line 523.
  [10]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 564.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 606.
+ [11]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 606.
  (./arch.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 564.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 564.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 606.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 606.
+Package rerunfilecheck Info: File `arch.out' has not changed.
+(rerunfilecheck)             Checksum: 89783D2497D8B1AEEF8F0BE571E810F8;419.
 
-
-Package rerunfilecheck Warning: File `arch.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `arch.out':
-(rerunfilecheck)             Before: 5FE612655A338E31154F4BBC485D8305;500
-(rerunfilecheck)             After:  89783D2497D8B1AEEF8F0BE571E810F8;419.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 10855 strings out of 493014
- 157442 string characters out of 6133351
- 244067 words of memory out of 5000000
- 14103 multiletter control sequences out of 15000+600000
+ 10871 strings out of 493014
+ 157866 string characters out of 6133351
+ 244276 words of memory out of 5000000
+ 14115 multiletter control sequences out of 15000+600000
  88997 words of font info for 132 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 53i,9n,92p,1446b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{subsection.5.3} has been referenced but does not 
-exist, replaced by a fixed one
-
-{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/newtxtt/txttEec.enc}{/usr/l
-ocal/texlive/2016/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/usr/local/
-texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2016/te
-xmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{/usr/local/texlive/2016/texmf-di
-st/fonts/enc/dvips/tex-gyre/q-ec.enc}{/usr/local/texlive/2016/texmf-dist/fonts/
-enc/dvips/newtx/ntx-ec-tlf-sc.enc}</usr/local/texlive/2016/texmf-dist/fonts/typ
-e1/public/newtxtt/newtxtt.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/p
-ublic/tex-gyre/qhvb.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/
-tex-gyre/qtmb.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/tex-gy
-re/qtmr.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/tex-gyre/qtm
-ri.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/newtx/rntxmi7.pfb
-></usr/local/texlive/2016/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr
-/local/texlive/2016/texmf-dist/fonts/type1/public/newtx/rtxmi7.pfb></usr/local/
-texlive/2016/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive
-/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on arch.pdf (12 pages, 7447505 bytes).
+ 53i,9n,92p,1446b,595s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/newtxtt/txttEec.enc}{/usr
+/local/texlive/2016/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/usr/loca
+l/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2016/
+texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{/usr/local/texlive/2016/texmf-
+dist/fonts/enc/dvips/tex-gyre/q-ec.enc}{/usr/local/texlive/2016/texmf-dist/font
+s/enc/dvips/newtx/ntx-ec-tlf-sc.enc}</usr/local/texlive/2016/texmf-dist/fonts/t
+ype1/public/newtxtt/newtxtt.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1
+/public/tex-gyre/qhvb.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publi
+c/tex-gyre/qtmb.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/tex-
+gyre/qtmr.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/tex-gyre/q
+tmri.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/newtx/rntxmi7.p
+fb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></u
+sr/local/texlive/2016/texmf-dist/fonts/type1/public/newtx/rtxmi7.pfb></usr/loca
+l/texlive/2016/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texli
+ve/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on arch.pdf (13 pages, 7885087 bytes).
 PDF statistics:
- 239 PDF objects out of 1000 (max. 8388607)
- 60 named destinations out of 1000 (max. 500000)
- 93 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 247 PDF objects out of 1000 (max. 8388607)
+ 61 named destinations out of 1000 (max. 500000)
+ 100 words of extra memory for PDF output out of 10000 (max. 10000000)
 

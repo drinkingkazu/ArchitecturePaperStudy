@@ -4,5 +4,5 @@
 \contentsline {section}{\numberline {4}Training and Inference}{4}{section.4}
 \contentsline {section}{\numberline {5}The Architectures}{5}{section.5}
 \contentsline {subsection}{\numberline {5.1}ResNet}{5}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}VGG}{6}{subsection.5.2}
-\contentsline {section}{\numberline {6}Conclusions}{7}{section.6}
+\contentsline {subsection}{\numberline {5.2}VGG}{8}{subsection.5.2}
+\contentsline {section}{\numberline {6}Conclusions}{9}{section.6}

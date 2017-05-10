@@ -334,6 +334,12 @@ Network & $e^-$ [\%] & $\gamma$ [\%] & $\mu^-$ [\%] & $\pi^-$ [\%] & proton [\%]
 \hline 
 \vspace{-0.1in}\\
 \vspace{0.05in}
+ VGG16a & 83.9 $\pm 0.2$ & 88.3 $\pm 0.2$  & 90.1 $\pm 0.2$ & 77.0 $\pm 0.2$ & 95.0 $\pm 0.1$ \\ 
+ \vspace{0.05in}
+ VGG16b & 83.8 $\pm 0.2$ & 90.0 $\pm 0.2$  & 92.0 $\pm 0.2$ & 79.0 $\pm 0.2$ & 96.2 $\pm 0.1$ \\ 
+ \vspace{0.05in}
+ VGG16c & 85.9 $\pm 0.2$ & 87.8 $\pm 0.2$  & 89.9 $\pm 0.2$ & 81.0 $\pm 0.2$ & 95.1 $\pm 0.1$ \\ 
+ \vspace{0.05in}
  ResNet14b & 84.8 $\pm 0.2$ & 85.0 $\pm 0.2$  & 90.5 $\pm 0.2$ & 76.0 $\pm 0.2$ & 94.0 $\pm 0.1$ \\ 
  \vspace{0.05in}
  ResNet29b & 87.2 $\pm 0.2$ & 86.7 $\pm 0.2$  & 90.7 $\pm 0.2$ & 78.8 $\pm 0.2$ & 96.8 $\pm 0.1$ \\ 
@@ -341,6 +347,23 @@ Network & $e^-$ [\%] & $\gamma$ [\%] & $\mu^-$ [\%] & $\pi^-$ [\%] & proton [\%]
  ResNet29b\_w4 & 87.9 $\pm 0.2 $ & 86.0 $\pm 0.2$  & 90.6 $\pm 0.2$ & 78.9 $\pm 0.2$ & 96.2 $\pm 0.1$ \\ 
  \vspace{0.05in}
  ResNet50b & 87.7 $\pm 0.2$ & 85.9 $\pm 0.2$  & 93.1 $\pm 0.1$ & 78.5 $\pm 0.2$ & 96.2 $\pm 0.1$ \\ 
+
+ \vspace{0.05in}
+
+ PlainResNet10b & 84.7 $\pm 0.2$ & 84.5 $\pm 0.2$  & 91.0 $\pm 0.1$ & 75.8 $\pm 0.2$ & 96.1 $\pm 0.1$ \\ 
+ \vspace{0.05in}
+ PlainResNet10b\_w4 & 85.6 $\pm 0.2$ & 85.6 $\pm 0.2$  & 91.5 $\pm 0.2$ & 78.3 $\pm 0.2$ & 96.3 $\pm 0.1$ \\ 
+ \vspace{0.05in}
+ PlainResNet12b & 84.5 $\pm 0.2$ & 85.1 $\pm 0.2$  & 92.6 $\pm 0.2$ & 74.4 $\pm 0.3$ & 95.4 $\pm 0.1$ \\ 
+ \vspace{0.05in}
+ PlainResNet18b & 85.5 $\pm 0.2$ & 85.9 $\pm 0.2$  & 93.1 $\pm 0.1$ & 78.5 $\pm 0.2$ & 96.2 $\pm 0.1$ \\ 
+ \vspace{0.05in}
+ PlainResNet18b\_w4 & 82.3 $\pm 0.2$ & 81.4 $\pm 0.2$  & 85.9 $\pm 0.2$ & 73.4 $\pm 0.3$ & 91.6 $\pm 0.2$ \\ 
+ \vspace{0.05in}
+ PlainResNet20b & 90.4 $\pm 0.2$ & 81.2 $\pm 0.2$  & 88.0 $\pm 0.2$ & 77.1 $\pm 0.2$ & 95.6 $\pm 0.1$ \\ 
+ \vspace{0.05in}
+ PlainResNet20b\_w4 & 72.2 $\pm 0.3$ & 74.9 $\pm 0.3$  & 72.1 $\pm 0.3$ & 73.2 $\pm 0.3$ & 80.0 $\pm 0.2$ \\ 
+ \vspace{0.05in}
  \vspace{0.05in}
     \end{tabular}
 \end{minipage}
@@ -351,7 +374,7 @@ Network & $e^-$ [\%] & $\gamma$ [\%] & $\mu^-$ [\%] & $\pi^-$ [\%] & proton [\%]
 \centering
 \captionof{table}{Computational performance for various ResNet architectures} \label{tab:resnetComput} 
 \begin{tabular}{cllllll}
- & \multicolumn{5}{c}{NUMBER CURRENTLY WRONG} \\
+ & \multicolumn{5}{c}{THESE NUMBERS CURRENTLY WRONG} \\
 \cline{2-6}
 \vspace{-0.1in}\\
 \vspace{0.05in}
@@ -372,10 +395,29 @@ Network & Mem (MB) & Wall Time (s) & IO Wait Time (s) & IO Thread Time (s) & IO 
 
 \begin{figure}[t]
   \centering  
-\includegraphics[width=0.6\textwidth]{Figures/resneteffpur.png}\\
-\caption{Efficiency vs purity curves for all resnet networks.  As expected, ResNet14b is on the lower end, while the others are fairly comparable. }
+\includegraphics[width=0.45\textwidth]{Figures/resnet_effpur.png}
+\hspace{2 mm}
+\includegraphics[width=0.45\textwidth]{Figures/vgg_effpur.png}\\
+\caption{a) Efficiency vs purity curves for all resnet networks.  As expected, ResNet14b is on the lower end, while the others are fairly comparable (left). b) Efficiency vs purity for all VGG nets (right). }
   \label{fig:resneteffpur}
 \end{figure}
+
+\begin{figure}[t]
+  \centering  
+\includegraphics[width=0.45\textwidth]{Figures/plainresnet_effpur.png}
+\hspace{2 mm}
+\includegraphics[width=0.45\textwidth]{Figures/all_effpur.png}\\
+\caption{a) Efficiency vs purity curves for all plainresnet networks (left). b) Efficiency vs purity for all nets (right). }
+  \label{fig:plainresneteffpur}
+\end{figure}
+
+%\begin{figure}[t]
+%  \centering  
+%\includegraphics[width=0.6\textwidth]{Figures/resneteffpur.png}\\
+%\caption{Efficiency vs purity curves for all resnet networks.  As expected, ResNet14b is on the lower end, while the others are fairly comparable. }
+%  \label{fig:resneteffpur}
+%\end{figure}
+
 
 
 \par From Table \ref{tab:classCompare} and Table \ref{tab:resnetComput} we can conclude several things.  First, we see that in general, performance increases as depth increase.  (We seee from Kevin's slides that resources usage also increases with depth). From the Resnet29b\_w4 results we see that increasing the width of the Resnet results in minimal performance increase at the high cost of computational resources.  We also see that the bottleneck architecture increases performance minimally at the expense of resources (from Kevin's slides).  We conclude here that resnet29 is the best choice of the ResNet in terms of computational and overall performance.  
